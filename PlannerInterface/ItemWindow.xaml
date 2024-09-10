@@ -1,0 +1,40 @@
+﻿<Window x:Class="PlannerInterface.ItemWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PlannerInterface"
+        mc:Ignorable="d"
+        Title="ItemWindow" FontSize="20" FontFamily="Tahoma"
+        Height="600" MinHeight="600" MaxHeight="600" 
+        Width="600" MinWidth="600" MaxWidth="600"
+        Background="#EEE2DC" Foreground="#AC3B61">
+    <Window.Resources>
+        <Style x:Key="HeightWidthButton">
+            <Setter Property="ItemsControl.Height" Value="40"/>
+            <Setter Property="ItemsControl.Width" Value="150"/>
+            <Setter Property="ItemsControl.FontSize" Value="20"/>            
+        </Style>
+    </Window.Resources>
+    <StackPanel Orientation="Vertical">
+        <Label Content="checklist" HorizontalContentAlignment="Center" Width="600"  Background="#BAB2B5" Foreground="#AC3B61" FontSize="25"/>
+        <ListBox x:Name="dealsListBox" Height="410" Background="#EEE2DC" Foreground="#123C69"/>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Enter the techt:" Foreground="#AC3B61"/>
+            <TextBox x:Name="itemTextBox" Height="40" Width="430" Background="#EEE2DC"  Foreground="#AC3B61"/>
+        </StackPanel>
+        
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="addButton" Content="add item" Background="#BAB2B5" Foreground="#AC3B61"
+                Style="{StaticResource HeightWidthButton}"/>
+            <Button x:Name="deleteButton" Content="delete item" Background="#AC3B61" Foreground="#EEE2DC"
+                Style="{StaticResource HeightWidthButton}"/>
+            <Button x:Name="updateButton" Content="change item" Background="#BAB2B5" Foreground="#AC3B61"
+                Style="{StaticResource HeightWidthButton}"/>
+            <Button x:Name="exitButton" Content="exit" Background="#AC3B61" Foreground="#EEE2DC"
+                Style="{StaticResource HeightWidthButton}" Click="exitButton_Click"/>
+        </StackPanel>
+        <Label Content="The secret is to get started..." Foreground="#AC3B61" 
+               HorizontalAlignment="Center" FontFamily="Arial Italic"/>
+    </StackPanel>
+</Window>

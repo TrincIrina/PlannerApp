@@ -1,0 +1,44 @@
+﻿<Window x:Class="PlannerInterface.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PlannerInterface"
+        mc:Ignorable="d"
+        Title="ToDoLists" FontSize="20" FontFamily="Tahoma"
+        Height="630" MinHeight="630" MaxHeight="630" 
+        Width="600" MinWidth="600" MaxWidth="600"
+        Background="LightGray">
+    <Window.Resources>
+        <Style x:Key="HeightWidthButton">
+            <Setter Property="ItemsControl.Height" Value="40"/>
+            <Setter Property="ItemsControl.Width" Value="120"/>
+            <Setter Property="ItemsControl.FontSize" Value="20"/>
+            <Setter Property="ItemsControl.Foreground" Value="White"/>
+            <Setter Property="ItemsControl.Background" Value="DimGray"/>
+        </Style>
+    </Window.Resources>
+    <StackPanel Orientation="Vertical">
+        <Button x:Name="todoListButton" Content="to-do lists" Height="40" Width="600" 
+                Background="DimGray" Foreground="White" FontSize="20" Click="todoListButton_Click"/>
+        <ListBox x:Name="todoListBox" Height="400" Width="600" Background="LightGray" Foreground="DimGray"/>
+        <Label Content="Enter the name of the to-do list:" Background="DimGray" Foreground="White"/>
+        <TextBox x:Name="itemTextBox" Height="30" Width="600" Background="LightGray" Foreground="DimGray"/>
+
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="openTodoListButton" Content="open"
+                    Style="{StaticResource HeightWidthButton}" Click="openTodoListButton_Click"/>
+            <Button x:Name="addButton" Content="add"
+                Style="{StaticResource HeightWidthButton}" Click="addButton_Click"/>
+            <Button x:Name="deleteButton" Content="delete"
+                Style="{StaticResource HeightWidthButton}" Click="deleteButton_Click"/>
+            <Button x:Name="updateButton" Content="change"
+                Style="{StaticResource HeightWidthButton}" Click="updateButton_Click"/>
+            <Button x:Name="exitButton" Content="exit"
+                Style="{StaticResource HeightWidthButton}" Click="exitButton_Click"/>
+        </StackPanel>
+        <Label/>
+        <Label Content="It all starts with the first step..." HorizontalAlignment="Center" 
+               FontFamily="Arial Italic" Foreground="DimGray"/>
+    </StackPanel>
+</Window>
